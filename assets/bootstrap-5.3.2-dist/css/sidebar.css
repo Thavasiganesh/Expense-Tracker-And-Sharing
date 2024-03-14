@@ -1,0 +1,76 @@
+/* Custom Styles for Sidebar */
+
+/* Optional: If you're using Bootstrap, you can also try adding the following rule */
+body {
+    overflow-x: hidden; /* This prevents horizontal scrollbars from appearing */
+}
+
+#sidebar-collapse {
+    background: #222;
+    color: #fff;
+    padding-top: 20px;
+    margin-bottom: 0;
+}
+
+.profile-sidebar {
+    padding: 20px;
+}
+
+.profile-userpic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.profile-usertitle {
+    margin-top: 10px;
+}
+
+.profile-usertitle-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.profile-usertitle-status {
+    font-size: 12px;
+}
+
+.navbar-brand{
+    text-transform: uppercase;
+}
+.nav.menu {
+    margin-top: 20px;
+}
+
+.nav.menu li {
+    list-style: none;
+}
+
+.nav.menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.nav.menu a:hover {
+    background: #555;
+    color: #fff;
+}
+
+.children {
+    padding-left: 20px;
+}
+
+/* Collapse Icon */
+.nav.menu .icon {
+    float: right;
+}
+
+/* Active Menu Item */
+.nav.menu .active a {
+    background: #555;
+    color: #fff;
+}

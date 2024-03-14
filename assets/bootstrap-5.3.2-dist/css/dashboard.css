@@ -1,0 +1,134 @@
+/* Add this to your existing styles or create a new CSS file */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.navbar-custom span {
+    color: #ffffff;
+}
+
+#sidebar-collapse {
+    background: #222;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.profile-userpic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.profile-usertitle-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-usertitle-status {
+    font-size: 12px;
+}
+
+.nav.menu {
+    margin-top: 20px;
+}
+
+.nav.menu li {
+    list-style: none;
+}
+
+.nav.menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.nav.menu a:hover {
+    background: #555;
+    color: #fff;
+}
+
+.children {
+    padding-left: 20px;
+}
+
+/* Active Menu Item */
+.nav.menu .active a {
+    background: #555;
+    color: #fff;
+}
+
+.col-sm-9,
+.col-sm-12 {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0;
+}
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+.panel {
+    margin-bottom: 20px;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.panel-heading span.clickable {
+    padding-right: 10px;
+}
+
+.panel-body.easypiechart-panel {
+    text-align: center;
+}
+
+.easypiechart {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 18px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+.easypiechart .percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+    color: #595b5d;
+}
+
+/* Modal Style */
+.modal-header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.modal-body,
+.modal-footer {
+    background-color: #ffffff;
+}
+
+.modal-footer button {
+    background-color: #007bff;
+    color: #fff;
+}

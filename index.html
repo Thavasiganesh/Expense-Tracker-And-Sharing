@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker and Sharing</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #1a1a1a; /* High-contrast text color */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+        }
+        .login-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: #777;
+        }
+        .container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-image: url('https://i.etsystatic.com/23263941/r/il/c4f4fd/2350544146/il_fullxfull.2350544146_qgs1.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            opacity: 0.8;
+            overflow: hidden;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .image-container {
+            flex: 1;
+            text-align: center;
+            margin-top: 50px;
+            z-index: 1;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            opacity: 0.5;
+        }
+        .content {
+            flex: 1;
+            margin-left: 20px;
+            margin-top: 50px;
+            z-index: 1;
+            color: #fff;
+        }
+        .content h2 {
+            color: #fff;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1a1a1a; /* High-contrast text color */
+        }
+        .about-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        .about-section h2 {
+            color: #1a1a1a; /* High-contrast text color */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            clear: both;
+            box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Expense Tracker</a>
+        <button id="login-btn" class="login-btn">Login</button>
+    </header>
+    <div class="container">
+        <div class="image-overlay"></div>
+        <div class="image-container">
+            <!-- Hero Section -->
+            <h2>Welcome to Expense Tracker and Sharing</h2>
+            <p>Track your expenses easily and efficiently with our intuitive expense tracking application. Share expenses and manage your finances collaboratively with your friends, family, or colleagues.</p>
+        </div>
+        <div class="content">
+            <!-- Features/Benefits Section -->
+            <h2>Key Features</h2>
+            <ul>
+                <li>Track expenses by category</li>
+                <li>Set budgets and financial goals</li>
+                <li>Share expenses with others</li>
+                <li>Generate detailed expense reports</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="about-section">
+            <!-- About Us Section -->
+            <h2>About Us</h2>
+            <p>We are a team of passionate developers dedicated to creating user-friendly and efficient financial management tools. Our mission is to simplify the process of tracking expenses and empower individuals to achieve their financial goals.</p>
+        </div>
+    </div>
+    <footer>
+        <!-- Contact Information -->
+        <p>Contact us at: <a href="ExpenseTracker@gmail.com">example@example.com</a> | Phone: 123-456-7890</p>
+        <!-- Footer Links -->
+        <nav>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Copyright</a>
+        </nav>
+    </footer>
+
+    <script>
+        // JavaScript for login button functionality
+        document.querySelector('.login-btn').addEventListener('click', function() {
+            // Redirect to index.php
+            window.location.href = 'index.php';
+        });
+    </script>
+    <script>
+    // JavaScript for login button functionality
+    document.getElementById('login-btn').addEventListener('click', function() {
+        // Redirect to index.php using Firebase Functions HTTP request
+        fetch('/redirect', {
+            method: 'GET',
+            redirect: 'follow'
+        })
+        .then(response => {
+            if (response.redirected) {
+                window.location.href = response.url;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+</html>
