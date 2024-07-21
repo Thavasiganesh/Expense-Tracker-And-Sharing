@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Expenses Chart</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div style="width: 800px; height: 400px;"> <!-- Specify the width and height of the chart container -->
+        <canvas id="monthlyExpensesChart" width="800" height="400"></canvas>
+    </div>
+    <script>
+        // Fetch data from PHP script
+        fetch('get_monthly_expenses.php')
+            .then(response => response.json())
+            .then(data => {
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+                const expenses = Object.values(data);
+
+                // Render chart for monthly expenses
+                const ctx = document.getElementById('monthlyExpensesChart').getContext('2d');
+                const monthlyExpensesChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: months,
+                        datasets: [{
+                            label: 'Total Expenses',
+                            data: expenses,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)', // Blue color
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+</body>
+</html>
